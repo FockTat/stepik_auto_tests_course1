@@ -78,8 +78,8 @@ import os
 #     browser = webdriver.Chrome()
 #     browser.get(link)
 #
-#     # input1 = browser.find_element(By.CSS_SELECTOR, 'input.form-control')
-#     # input1.send_keys("Andrey")
+#     input1 = browser.find_element(By.CSS_SELECTOR, 'input.form-control')
+#     input1.send_keys("Andrey")
 #
 #     elements = browser.find_elements(By.CSS_SELECTOR, 'input[required]')
 #     for element in elements:
@@ -93,7 +93,7 @@ import os
 #
 #     # Проверяем, что смогли зарегистрироваться
 #     # ждем загрузки страницы
-#     sleep(1)
+#     time.sleep(1)
 #
 #     # находим элемент, содержащий текст
 #     welcome_text_elt = browser.find_element(By.TAG_NAME, "h1")
@@ -105,7 +105,7 @@ import os
 #
 # finally:
 #     # ожидание чтобы визуально оценить результаты прохождения скрипта
-#     sleep(10)
+#     time.sleep(10)
 #     # закрываем браузер после всех манипуляций
 #     browser.quit()
 
@@ -274,31 +274,35 @@ import os
 
 # metod get
 
-def calc(x):
-    return str(math.log(abs(12 * math.sin(int(x)))))
+# def calc(x):
+#     return str(math.log(abs(12 * math.sin(int(x)))))
+#
+# try:
+#     browser = webdriver.Chrome()
+#     # говорим WebDriver искать каждый элемент в течение 5 секунд
+#     browser.implicitly_wait(5)
+#
+#     browser.get("http://suninjuly.github.io/explicit_wait2.html")
+#
+#     # говорим Selenium проверять в течение 5 секунд, пока кнопка не станет кликабельной
+#     element = WebDriverWait(browser, 12).until(
+#             EC.text_to_be_present_in_element((By.ID, "price"), '$100')
+#         )
+#     btn = browser.find_element(By.ID, 'book')
+#     btn.click()
+#
+#     x_element = browser.find_element(By.ID, "input_value")
+#     x = x_element.text
+#     y = calc(x)
+#
+#     input1 = browser.find_element(By.ID, 'answer')
+#     input1.send_keys(y)
+#
+#     btn2 = browser.find_element(By.XPATH, '//button[@type="submit"]')
+#     btn2.click()
+# finally:
+#     time.sleep(5)
 
-try:
-    browser = webdriver.Chrome()
-    # говорим WebDriver искать каждый элемент в течение 5 секунд
-    browser.implicitly_wait(5)
-
-    browser.get("http://suninjuly.github.io/explicit_wait2.html")
-
-    # говорим Selenium проверять в течение 5 секунд, пока кнопка не станет кликабельной
-    element = WebDriverWait(browser, 12).until(
-            EC.text_to_be_present_in_element((By.ID, "price"), '$100')
-        )
-    btn = browser.find_element(By.ID, 'book')
-    btn.click()
-
-    x_element = browser.find_element(By.ID, "input_value")
-    x = x_element.text
-    y = calc(x)
-
-    input1 = browser.find_element(By.ID, 'answer')
-    input1.send_keys(y)
-
-    btn2 = browser.find_element(By.XPATH, '//button[@type="submit"]')
-    btn2.click()
-finally:
-    time.sleep(5)
+numbers = [1, 2, 3, 4, 5, 6, 1, 7, 5, 45]
+result = set(numbers)
+print(result)
